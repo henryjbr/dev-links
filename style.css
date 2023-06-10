@@ -1,0 +1,134 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root{
+  --text-color: white;
+  --bg-url: url(./assets/darkbg.png);
+  --stroke-color: rgba(255, 255, 255,0.5);
+  --surface-color: rgba(255, 255, 255, 0.05);
+  --surface-color-hover: rgba(0, 0, 0, 0.2);
+  --highlight-color:rgba(225, 225, 225, 0.2);
+  --switch-bg-url: url(./assets/moon-stars.svg);
+}
+.light{
+  --text-color: black;
+  --bg-url: url(./assets/light.png);
+  --stroke-color: rgba(0,0,0,0.5);
+  --surface-color: rgba(0, 0, 0, 0.05);
+  --highlight-color: rgba(0, 0, 0, 0.1);
+  --switch-bg-url: url(./assets/sol.svg); 
+}
+
+body{
+  background: var(--bg-url) no-repeat top center/cover;
+}
+body * {
+  font-family: 'inter', sans-serif;
+  color: var(--text-color);
+}
+
+#container {
+  width: 350px;
+  margin: 56px auto 0px;
+}
+
+#switch{
+  position: relative;
+  width: 54px;
+  margin: 10px auto ;
+
+}
+#switch button{
+width: 32px;
+height: 32px;
+background:  white var(--switch-bg-url) no-repeat center;
+border: 0;
+border-radius: 50%;
+position: absolute;
+transform: translateY(-50%);
+top: 50%;
+z-index: 1;
+left: 0;
+}
+#switch span{
+  display: block;
+  width: 64px;
+  height: 24px;
+background: var(--surface-color);
+border: 1px solid var(--stroke-color);
+-webkit-backdrop-filter: blur(4px);
+border-radius: 9999px;
+}
+.light #switch button {
+right: 0;
+left: 33px;
+}
+
+
+#profile {
+  text-align: center;
+}
+#profile img {
+width: 112px;
+}
+#profile p {
+  font-weight: 500;
+  margin-top:8px;
+  line-height: 24px;
+}
+
+
+ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding: 24px 0;
+}
+ul li a{
+height: 52px;
+background: var(--surface-color);
+padding: 16px 24px;
+border: 1px solid var(--stroke-color);
+border-radius: 8px;
+-webkit-backdrop-filter: blur(4px);
+text-decoration: none;
+font-weight: 500;
+
+
+transition: background 0.2s;
+
+justify-content: center;
+  display: flex;
+ align-items: center
+
+
+}
+ul li a:hover {
+  background-color: var(--surface-color-hover);
+  border: 1.5px solid var(--text-color);
+}
+
+
+#social-icons {
+display: flex;
+  gap: 32px;
+justify-content: center;
+  padding: 24px 0;
+gap: 16px;
+font-size: 30px;
+}
+#social-icons a:hover {
+  background: var(--highlight-color);
+  padding: 16px;
+  border-radius: 50%;
+}
+#social-icons a{
+display: flex;
+align-items: center;
+justify-content: center;
+padding: 16px;
+}
